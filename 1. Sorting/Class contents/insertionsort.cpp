@@ -30,3 +30,7 @@ void print(vector<int> arr){
         cout << arr[i] << " ";
     };
 };
+
+// bestcase: n (헤더 조건을 한번씩만 확인) 이미 정렬이 되어 있는 상태
+// worstcase : n^2 반대로 정렬이 되어 있는 상태
+// time complexity : O(n) , 오메가(n^2)
