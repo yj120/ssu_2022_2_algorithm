@@ -56,8 +56,9 @@ void merge(int *arr, int start, int mid, int end){
         };
     };
     for (int t = start; t <= end;t++){ 
-        arr[t] = sorted[t];
+        arr[t] = sorted[t]; // 정렬시킨 범위까지 arr에 다시 넣어준다.
     };
+
     printarr(arr, start, k);
     //printarr(arr, j, k);
 };

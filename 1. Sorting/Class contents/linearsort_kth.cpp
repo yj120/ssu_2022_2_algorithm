@@ -8,7 +8,7 @@ void swap(int *a, int *b){
     *b = temp;
 };
 
-int partition(int arr[], int l, int r, int x)
+int partition(int arr[], int l, int r, int x) // x는 임의의 pivot 값
 {
     int i;
     for (i = l; i < r;i++){
@@ -19,9 +19,9 @@ int partition(int arr[], int l, int r, int x)
     swap(&arr[i], &arr[r]);
     i = l;
     for (int j = l; j <= r-1;j++){
-        if(arr[j]<=x){
+        if(arr[j]<=x){ // pivot 값 보다 작으면 맨 왼쪽(처음값)과 본인 위치 변경
             swap(&arr[i], &arr[j]);
-            i++;
+            i++; // 0->1->2 커서 옮김
         };
     };
     swap(&arr[i], &arr[r]);
@@ -29,16 +29,19 @@ int partition(int arr[], int l, int r, int x)
 };
 
 
-// return 부분이 강의자료에는 없음 확인...
-int select(int arr[],int l,int r,int k){
+// return 부분이 강의자료에는 없음 확인...-> 햇음
+
+// 이해안감..뭐지???갑자기..
+
+int select(int arr[],int l,int r,int k){ // k: k번째로 작은 숫자 고르기
     int pos = 0;
     if(k>=0 && k<r-l+1){
         int n = r -l + 1;
-        int pivot = arr[l + rand() % n];
+        int pivot = arr[l + rand() % n]; // random으로 pivot값 결정
 
         int pos = partition(arr, l, r, pivot);
         
-        if (pos - l == k)
+        if (pos - l == k) // 
         {
             return arr[pos];
         }

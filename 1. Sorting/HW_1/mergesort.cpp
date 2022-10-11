@@ -21,25 +21,28 @@ void merge(int *arr, int start, int m, int end)
     int *L, *R;
     L = new int[n1];
     R = new int[n2];
-    //int L[n1], R[n2];
 
-    //cout << "n1:" << n1 << endl;
-    //cout << "n2:" << n2 << endl;
+
+    /*왼쪽, 오른쪽 배열에 각각 시작~중간, 중간~끝 값을 넣는다.*/
     for (int i = 0; i < n1; i++)
     {
         L[i] = arr[start + i];
         //cout << "L[i]"<< L[i] << endl;
     };
+
+    
     for (int j = 0; j < n2; j++)
     {
         R[j] = arr[m + 1 + j];
         //cout << "R[j]"<< R[j] << endl;
     }
 
+    /*인덱스 커서 재설정*/
     i = 0;
     j = 0;
     k = start;
 
+    /*커서 i와 j가 배열 사이즈를 초과하지 않을 때, 계속 왼쪽배열 vs 오른쪽배열 비교*/
     while (i < n1 && j < n2)
     {
         if (L[i] <= R[j])
@@ -55,6 +58,7 @@ void merge(int *arr, int start, int m, int end)
         k++;
     };
 
+    /*커서 i와 j가 배열 사이즈를 넘었을 때-> 배열의 남은 값들을 저장해주기 위함*/
     while (i < n1)
     {
         arr[k] = L[i];
@@ -68,7 +72,7 @@ void merge(int *arr, int start, int m, int end)
         k++;
     };
 
-
+    // 정렬시킨 k번째 인덱스까지, arr출력
     for (int i = start; i < k;i++){
         cout << arr[i] << " ";
     };
@@ -84,7 +88,6 @@ void sort(int *arr, int start, int end)
         sort(arr, start, m);
         sort(arr, m + 1, end);
         merge(arr, start, m, end);
-        //printarr(arr, start, end);
     };
 };
 
@@ -106,10 +109,4 @@ int main()
 
     sort(input, 0, size-1);
 
-/*
-    for (int i = 0; i < size;i++){
-        cout << input[i] << " ";
-    };
-    cout << "\n";
-    */
 };
