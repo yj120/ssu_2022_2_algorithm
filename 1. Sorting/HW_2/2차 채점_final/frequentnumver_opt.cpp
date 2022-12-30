@@ -22,7 +22,7 @@ int main(){
     cin >> s;
 
     // 쓰레기값 이슈 없도록 주의하자 
-    
+
     int *input = new int[s];
     cin >> N;
 
@@ -81,4 +81,5 @@ void function(int *input, int size, int N)
 
 // 빈도수가 큰 수 부터 출력
 // 빈도수가 같으면 내림차순으로 출력
-// 시간복잡도 O(n)v
+// 시간복잡도 O(n)
+// 

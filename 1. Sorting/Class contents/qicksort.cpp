@@ -25,15 +25,11 @@ void quick_sort(int list[], int left, int right) // pivot을 맨 왼쪽 값으�
         if (start > end) // start가 end 범위 넘어가면
         {
             swap(list[pivot], list[end]);
-        }
-        else
+        }else
             swap(list[start], list[end]); // pivot 값 보다 start index value가 더 크고, // pivot < start index value
                                           // pivot 값이 end index value보다 클때 // pivot > end index value
                                           // -> start index <> end index swap
-                                         // 
-                                         // 
-                                         // 
-    }
+    };
     quick_sort(list, left, end - 1);
     quick_sort(list, end + 1, right);
 }

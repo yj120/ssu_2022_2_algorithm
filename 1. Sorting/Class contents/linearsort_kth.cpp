@@ -36,7 +36,7 @@ int partition(int arr[], int l, int r, int x) // x는 임의의 pivot 값
 int select(int arr[],int l,int r,int k){ // k: k번째로 작은 숫자 고르기
     int pos = 0;
     if(k>=0 && k<r-l+1){
-        int n = r -l + 1;
+        int n = r -l + 1; // 오른쪽 - 왼쪽 + 1 -> 전체크기?
         int pivot = arr[l + rand() % n]; // random으로 pivot값 결정
 
         int pos = partition(arr, l, r, pivot);
